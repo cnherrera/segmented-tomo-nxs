@@ -20,7 +20,7 @@ You have three possible ways to use this tool depending on your setup.
 
 If you can use pip normally:
 ```
-pip install git+https://github.com/cherrera/nxtomo-segmented-builder.git
+pip install git+https://github.com/cnherrera/segmented-tomo-nxs.git
 ```
 
 After installation:
@@ -30,21 +30,21 @@ from nxtomo_segmented_builder import create_nexus_tomo_file
 
 If you want a specific version:
 ```
-pip install git+https://github.com/yourusername/nxtomo-builder.git@v0.1.0
+pip install git+https://github.com/cnherrera/segmented-tomo-nxs.git@v0.1.0
 ```
 
 ### Option 2 — If You Do NOT Have Root Permissions
 
 You can install locally in your user directory:
 ```
-pip install --user git+https://github.com/yourusername/nxtomo-builder.git
+pip install --user git+https://github.com/cnherrera/segmented-tomo-nxs.git
 ```
 
 If you are using a virtual environment:
 ```
 python -m venv myenv
 source myenv/bin/activate
-pip install git+https://github.com/yourusername/nxtomo-builder.git
+pip install git+https://github.com/cnherrera/segmented-tomo-nxs.git
 ```
 
 No admin rights required.
@@ -63,7 +63,7 @@ You can:
    - Unzip it.
 
 2. Step 2 — Copy the file
-   - Locate: nxtomo_segmentation_builder/builder.py
+   - Locate: nxtomo_segmentated_builder/builder.py
    - Copy builder.py into your working directory.
 
 3. Step 3 — Import it directly
@@ -91,7 +91,7 @@ pip install --user numpy nexusformat h5py
 ### From NumPy Array
 
 ```python
-from nxtomo_segmentation_builder import create_nexus_tomo_file
+from nxtomo_segmentated_builder import create_nexus_tomo_file
 import numpy as np
 
 # Your segmented data
@@ -112,7 +112,7 @@ data=data,
 ### From Raw Binary File
 
 ```python
-from nxtomo_segmentation_builder import create_nexus_from_raw_file
+from nxtomo_segmentated_builder import create_nexus_from_raw_file
 
 create_nexus_from_raw_file(
     raw_file_path='data.raw',
@@ -153,7 +153,7 @@ create_nexus_tomo_file(
 
 ```python
 # Import the package
-from nxtomo_segmentation_builder import create_nexus_tomo_file
+from nxtomo_segmentated_builder import create_nexus_tomo_file
 import numpy as np
 
 # Load your data

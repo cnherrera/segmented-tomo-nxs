@@ -3,7 +3,7 @@ requires = ["setuptools>=61", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "nxtomo_builder"
+name = "nxtomo_segmented_builder"
 dynamic = ["version"]
 description = "Create NeXus-compliant files from segmented tomography data"
 readme = "README.md"
@@ -49,15 +49,15 @@ jupyter = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/yourusername/nxtomo-builder"
+Homepage = "https://github.com/cnherrera/segmented-tomo-nxs"
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["nxtomo_builder*"]
+include = ["nxtomo_segmented_builder*"]
 
 [tool.setuptools.dynamic]
-version = {attr = "nxtomo_builder.version.__version__"}
+version = {attr = "nxtomo_segmented_builder.version.__version__"}
 
 [project.scripts]
 # Si en el futuro activas CLI:
-# nxtomo-create = "nxtomo_builder.cli:main"
+# nxtomo-create = "nxtomo_segmented_builder.cli:main"
