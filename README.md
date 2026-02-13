@@ -52,9 +52,9 @@ No admin rights required.
 ### Option 3 — No Git, No Installation (Use builder.py Directly)
 
 If you:
-❌ Do not have git
-❌ Cannot install packages
-❌ Just want to use the script directly
+- Do not have git
+- Cannot install packages
+- Just want to use the script directly
 
 You can:
 1. Step 1 — Download the repository as ZIP
@@ -75,7 +75,6 @@ You can:
 That’s it.
 
 ⚠️ Important: You still need these Python packages installed:
-
 - numpy
 - nexusformat
 - h5py
@@ -88,31 +87,10 @@ pip install --user numpy nexusformat h5py
 
 ## Quick Start
 
-### From NumPy Array
-
-```python
-from nxtomo_segmentated_builder import create_nexus_tomo_file
-import numpy as np
-
-# Your segmented data
-data = np.load('segmented_volume.npy')  # Shape: (z, y, x)
-
-# Create NeXus file
-create_nexus_tomo_file(
-    output_file='output.nxs',
-
-data=data,
-    voxel_size=[1.0, 1.0, 1.0],  # micrometers
-    title="My Segmented Tomography",
-    sample_name="Foam Sample",
-    sample_description="Polyurethane foam"
-)
-```
-
 ### From Raw Binary File
 
 ```python
-from nxtomo_segmentated_builder import create_nexus_from_raw_file
+from nxtomo_segmented_builder import create_nexus_from_raw_file
 
 create_nexus_from_raw_file(
     raw_file_path='data.raw',
@@ -121,6 +99,26 @@ create_nexus_from_raw_file(
     voxel_size=[0.5, 0.5, 0.5],
     title="Lab Tomography",
     sample_name="Sample A"
+)
+```
+
+### From NumPy Array
+
+```python
+from nxtomo_segmented_builder import create_nexus_tomo_file
+import numpy as np
+
+# Your segmented data
+data = np.load('segmented_volume.npy')  # Shape: (z, y, x)
+
+# Create NeXus file
+create_nexus_tomo_file(
+    output_file='output.nxs',
+    data=data,
+    voxel_size=[1.0, 1.0, 1.0],  # micrometers
+    title="My Segmented Tomography",
+    sample_name="Foam Sample",
+    sample_description="Polyurethane foam"
 )
 ```
 
@@ -147,28 +145,6 @@ create_nexus_tomo_file(
     phase_config=phase_config,
     thermal_props=thermal_props
 )
-```
-
-## Usage in Jupyter Notebooks
-
-```python
-# Import the package
-from nxtomo_segmentated_builder import create_nexus_tomo_file
-import numpy as np
-
-# Load your data
-data = np.load('my_segmentation.npy')
-
-# Create file
-output = create_nexus_tomo_file(
-    output_file='analysis.nxs',
-    data=data,
-    voxel_size=[2.0, 2.0, 2.0],
-    title="Jupyter Analysis",
-    sample_name="Test"
-)
-
-print(f"Created: {output}")
 ```
 
 ## Documentation
