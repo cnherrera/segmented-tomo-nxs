@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.nxs
+dist/
+build/
+*.egg-info/
+.env
+venv/
